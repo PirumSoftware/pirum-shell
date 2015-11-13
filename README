@@ -3,6 +3,13 @@ Pirum-Shell: Python/GTK3 desktop overlay aping gnome-shell
 --------------------------------------------------------
 v0.19 (Almost Alpha2)
 
+All Branches
+------------
+Master -- Latest commited changes brokken (wont build)
+Alpha -- Latest commits from Master fixed all build errors etc (will build but buggy)
+Beta -- Branch not yet available
+Stable -- Branch not yet available
+
 About
 -----
 This is a program that is all about being a lightweight, simple and slick gnome-shell style desktop launcher.
