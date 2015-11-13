@@ -1,0 +1,78 @@
+--------------------------------------------------------
+OhM-shell: Python/GTK3 desktop overlay aping gnome-shell
+--------------------------------------------------------
+v0.19 (Almost Alpha2)
+
+About
+-----
+This is a program that is all about being a lightweight, simple and slick gnome-shell style desktop launcher.
+
+I have tested this with every window manager i can install so far. (openbox, metacity, xfwm, compiz)
+
+Why do this?
+------------
+I love the gnome-shell concept; it works well and has become my favourite desktop design. I have always wanted to try using light desktops as my primary desktop but there is nothing as slick as gnome-shell on light desktops.
+
+Recent Updates
+--------------
+ * Alpha release containing:
+    - Overlay with hot corner activities rollover
+    - Shortcuts set in the config (Options button)
+      Reload changes to your favourites within the UI.
+    - Show your open windows inside the overlay
+
+Recomendations
+--------------
+I have been using Openbox as my window manager using stalonetray (stand alone tray) as my system tray. I find this minimal setup very appealing and functional. as an added bonus it is configurable from obconf. :)
+
+Recently i've been using it inside gnome-shell with the top bar hidden completely and it's just becoming usable.
+
+Requires
+--------
+ * python 2.7
+ * python-psutil
+ * python 3.x
+ * python3-psutil
+ * python-gobject (possibly others for light desktops)
+ * python-xdg
+ * gnome-icon-theme (for the moment)
+ * gnome-session
+
+Links
+-----
+ * https://github.com/lachlan-00/ohm-shell
+ * https://github.com/lachlan-00/ohm-shell/archive/master.zip
+ * http://stalonetray.sourceforge.net/
+
+Example Config File
+-------------------
+
+[dock]
+# Shortcut bar: Enter the command then the icon path
+0fav = xdg-open /home/user
+0icon = /usr/share/icons/gnome/48x48/places/folder_home.png
+1fav = gnome-terminal
+1icon = /usr/share/icons/gnome/48x48/apps/terminal.png
+2fav = gedit
+2icon = /usr/share/icons/gnome/48x48/apps/text-editor.png
+3fav = gksu synaptic
+3icon = /usr/share/icons/hicolor/48x48/actions/system-upgrade.png
+4fav = rhythmbox
+4icon = /usr/share/icons/hicolor/48x48/apps/rhythmbox.png
+5fav = totem
+5icon = /usr/share/icons/hicolor/48x48/apps/totem.png
+6fav = chromium
+6icon = /usr/share/icons/hicolor/48x48/apps/chromium.png
+7fav = zim
+7icon = /usr/share/icons/hicolor/48x48/apps/zim.png
+8fav = gnome-control-center
+8icon = /usr/share/icons/gnome/48x48/categories/gnome-control-center.png
+9fav = 
+9icon =
+
+[options]
+# autostart allows multiple commands 4 space separated. ('    ')
+autostart = gnome-settings-daemon    stalonetray --dockapp-mode simple
+appposition = left
+showhotlabel = True
+
