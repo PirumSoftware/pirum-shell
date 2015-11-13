@@ -1,4 +1,4 @@
 #!/bin/sh
 
-# launch ohm-shell
-python3 /usr/share/ohm-shell/ohm_shell.py
+# launch pirum-shell
+python3 /usr/share/pirum-shell/pirum_shell.py

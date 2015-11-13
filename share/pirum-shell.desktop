@@ -1,13 +1,12 @@
 [Desktop Entry]
-Name=ohm-shell
+Name=Pirum-shell
 Comment=gnome-shell style, desktop overlay
-Exec=/usr/bin/ohm-shell
-Icon=/usr/share/pixmaps/ohm-shell.png
+Exec=/usr/bin/pirum-shell
+Icon=/usr/share/pixmaps/pirum-shell.png
 Terminal=false
 MultipleArgs=false
 Type=Application
 Categories=System;Applications;
 StartupNotify=true
-Name[en_AU]=ohm-shell
 GenericName=
-Comment[en_AU.utf8]=gnome-shell style, desktop overlay
+Name[en_US]=pirum-shell

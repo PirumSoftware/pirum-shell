@@ -34,7 +34,7 @@ except ImportError:
 import logops
 
 HOMEFOLDER = os.getenv('HOME')
-LOGFILE = HOMEFOLDER + '/.ohm-shell.log'
+LOGFILE = HOMEFOLDER + '/.pirum-shell.log'
 
 def checkconfig(inputpath):
     """ create a default config if not available """

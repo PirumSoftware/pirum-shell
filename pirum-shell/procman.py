@@ -28,7 +28,7 @@ import subprocess
 
 import logops
 
-LOGFILE = os.getenv('HOME') + '/.ohm-shell.log'
+LOGFILE = os.getenv('HOME') + '/.pirum-shell.log'
 
 def startprocess(proclist):
     """ start process returning the pid """

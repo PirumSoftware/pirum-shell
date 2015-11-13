@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-""" OhM-shell
+""" Pirum-shell
     ----------------Authors----------------
     Lachlan de Waard <lachlan.00@gmail.com>
     ----------------Licence----------------
@@ -44,10 +44,10 @@ from xdg.BaseDirectory import xdg_config_dirs
 
 
 HOMEFOLDER = os.getenv('HOME')
-CONFIG = xdg_config_dirs[0] + '/ohm-shell.conf'
-LOGFILE = HOMEFOLDER + '/.ohm-shell.log'
-HIDELIST = ['ohm_shell.py', 'ohm_shell.py', 'Desktop', 'ohm-shell: Activities',
-            'ohm-shell: Overlay', 'xfce4-panel', 'xfce4-notifyd',
+CONFIG = xdg_config_dirs[0] + '/pirum-shell.conf'
+LOGFILE = HOMEFOLDER + '/.pirum-shell.log'
+HIDELIST = ['pirum_shell.py', 'pirum_shell.py', 'Desktop', 'pirum-shell: Activities',
+            'pirum-shell: Overlay', 'xfce4-panel', 'xfce4-notifyd',
             'Top Expanded Edge Panel', 'plank']
 THEMENAME = 'gnome'
 MYTHEMEBASE = '/usr/share/icons/' + THEMENAME + '/'
@@ -59,12 +59,12 @@ for path in MYTHEMEPATHS.split(','):
         ICONSEARCHPATHS.append(MYTHEMEBASE + path)
 
 
-class OHMSHELL(object):
-    """ OHM-shell overlay """
+class PIRUMSHELL(object):
+    """ PIRUM-shell overlay """
     def __init__(self):
         """ Initialise the main window and start the program """
         self.builder = Gtk.Builder()
-        self.builder.add_from_file("/usr/share/ohm-shell/ohm-shell.ui")
+        self.builder.add_from_file("/usr/share/pirum-shell/pirum-shell.ui")
         self.builder.connect_signals(self)
         self.conf = ConfigParser.RawConfigParser()
         # Load primary windows, labels and button objects
@@ -361,7 +361,7 @@ class OHMSHELL(object):
             if args[0] == 'START':
                 # write the start of the log
                 logops.write(LOGFILE, ('\n================================' +
-                                       '===\nSTARTUP: ohm-shell is loading' +
+                                       '===\nSTARTUP: pirum-shell is loading' +
                                        '...\n' + time.asctime() +
                                        '\nWriting to log file: ' + LOGFILE +
                                        '\n================================' +
@@ -373,7 +373,7 @@ class OHMSHELL(object):
                         # execute autorun programs as hidden shell commands
                         tmpexec = items.split()
                         if tmpexec:
-                            logops.write(LOGFILE, 'OHM: executing aut' +
+                            logops.write(LOGFILE, 'PIRUM: executing aut' +
                                          'ostart\n   Command: ' + items + '\n')
                             tmppid = procman.startprocess(tmpexec)
                         if tmppid:
@@ -528,7 +528,7 @@ class OHMSHELL(object):
                         if isinstance(items[3], int):
                             tmppid = self.activatepid(items[3])
                             if tmppid:
-                                logops.write(LOGFILE, ('OHM: found running ' +
+                                logops.write(LOGFILE, ('PIRUM: found running ' +
                                                        'pid\n     Command: ' +
                                                        str(items[1]) +
                                                        '\n     PID: ' +
@@ -542,7 +542,7 @@ class OHMSHELL(object):
                         # Switch to active windows
                         if self.changewindow(items[0], event):
                             logops.write(LOGFILE,
-                                         ('OHM: activate existing window\n  ' +
+                                         ('PIRUM: activate existing window\n  ' +
                                           '   ' + items[0].get_tooltip_text()))
                             self.hide()
                             return True
@@ -552,7 +552,7 @@ class OHMSHELL(object):
                         tmppid = procman.startprocess(tmpexec)
                         if tmppid:
                             logops.write(LOGFILE,
-                                         ('OHM: executing favourite\n' +
+                                         ('PIRUM: executing favourite\n' +
                                           '     CMD: ' + str(items[1]) +
                                           '\n     PID: ' + str(tmppid[0]) +
                                           '\n'))
@@ -561,7 +561,7 @@ class OHMSHELL(object):
                             return True
                     tmpcount = tmpcount + 1
         if actor == "enter" or actor == self.gobutton:
-            logops.write(LOGFILE, ('OHM: executing from runentry\n     ' +
+            logops.write(LOGFILE, ('PIRUM: executing from runentry\n     ' +
                                    self.runentry.get_text() + '\n'))
             runcmd = str.split(self.runentry.get_text())
             tmppid = procman.startprocess(runcmd)
@@ -665,10 +665,10 @@ class OHMSHELL(object):
         self.mask = (event.get_coords())
         # avoid repeatedly opening/closing activities
         if self.mask == (0.0, 0.0) and not self.maskold == (0.0, 0.0):
-            if winname == 'ohm-shell: Overlay' or winname == ('ohm-shell:' +
+            if winname == 'pirum-shell: Overlay' or winname == ('pirum-shell:' +
                                                               ' Top Bar'):
                 self.hide()
-            if winname == 'ohm-shell: Activities':
+            if winname == 'pirum-shell: Activities':
                 self.show()
         return
 
@@ -757,7 +757,7 @@ class OHMSHELL(object):
         """ Update the list of open windows on the overlay """
         winlist = self.getwindowlist()
         if not winlist:
-            logops.write(LOGFILE, 'OHM: no change')
+            logops.write(LOGFILE, 'PIRUM: no change')
             return False
         count = 0
         # blank before filling dock
@@ -806,7 +806,7 @@ class OHMSHELL(object):
                 window = self.openwindows[overlaycount]
                 tmpname = window.get_name()
                 tmppid = str(window.get_pid())
-                logops.write(LOGFILE, ('OHM: activating window\n     NAME: ' +
+                logops.write(LOGFILE, ('PIRUM: activating window\n     NAME: ' +
                                        tmpname + '\n     PID:  ' + tmppid +
                                        '\n'))
                 window.activate(int(time.time()))
@@ -843,7 +843,7 @@ class OHMSHELL(object):
                         Gtk.main_iteration()
                     found = True
         if foundwin:
-            logops.write(LOGFILE, ('OHM: activating window group'))
+            logops.write(LOGFILE, ('PIRUM: activating window group'))
             for windows in foundwin:
                 tmpname = windows.get_name()
                 tmppid = str(windows.get_pid())
@@ -901,7 +901,7 @@ class OHMSHELL(object):
         tmpcount = 0
         for items in self.favlist:
             if not items[1]:
-                logops.write(LOGFILE, ('OHM: adding file to config ' +
+                logops.write(LOGFILE, ('PIRUM: adding file to config ' +
                                        filelist[1] + '\n'))
                 checkconfig.changesetting(CONFIG, 'dock',
                                           str(tmpcount) +'fav', filelist[1])
@@ -931,8 +931,8 @@ class OHMSHELL(object):
             self.addfavs.hide()
             self.show()
 if __name__ == "__main__":
-    OHMSHELL()
+    PIRUMSHELL()
     logops.write(LOGFILE, ('\n===================================\n' +
-                           'SHUTTING DOWN: ohm-shell closing...\n' +
+                           'SHUTTING DOWN: pirum-shell closing...\n' +
                            time.asctime() + '\n========================' +
                            '===========\n'))

@@ -1,14 +1,14 @@
 #!/usr/bin/env xdg-open
+
 [Desktop Entry]
-Name=ohm-shell3
+Name=pirum-shell3
 Comment=gnome-shell style, desktop overlay
-Exec=/usr/bin/ohm-shell3
-Icon=/usr/share/pixmaps/ohm-shell.png
+Exec=/usr/bin/pirum-shell3
+Icon=/usr/share/pixmaps/pirum-shell.png
 Terminal=false
 MultipleArgs=false
 Type=Application
 Categories=System;Applications;
 StartupNotify=true
-Name[en_AU]=ohm-shell3
 GenericName=
-Comment[en_AU.utf8]=gnome-shell style, desktop overlay
+Name[en_US]=pirum-shell3
