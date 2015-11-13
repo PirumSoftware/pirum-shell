@@ -1,5 +1,5 @@
 --------------------------------------------------------
-OhM-shell: Python/GTK3 desktop overlay aping gnome-shell
+Pirum-Shell: Python/GTK3 desktop overlay aping gnome-shell
 --------------------------------------------------------
 v0.19 (Almost Alpha2)
 
@@ -8,10 +8,6 @@ About
 This is a program that is all about being a lightweight, simple and slick gnome-shell style desktop launcher.
 
 I have tested this with every window manager i can install so far. (openbox, metacity, xfwm, compiz)
-
-Why do this?
-------------
-I love the gnome-shell concept; it works well and has become my favourite desktop design. I have always wanted to try using light desktops as my primary desktop but there is nothing as slick as gnome-shell on light desktops.
 
 Recent Updates
 --------------
@@ -37,12 +33,6 @@ Requires
  * python-xdg
  * gnome-icon-theme (for the moment)
  * gnome-session
-
-Links
------
- * https://github.com/lachlan-00/ohm-shell
- * https://github.com/lachlan-00/ohm-shell/archive/master.zip
- * http://stalonetray.sourceforge.net/
 
 Example Config File
 -------------------
