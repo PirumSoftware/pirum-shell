@@ -1,16 +1,15 @@
 --------------------------------------------------------
 Pirum-Shell: Python/GTK3 desktop overlay aping gnome-shell
 --------------------------------------------------------
-v0.19 (Almost Alpha2)
 
 All Branches
 ------------
-Master -- Latest commited changes brokken (wont build)
-Alpha -- Latest commits from Master fixed all build errors etc (will build but buggy)
+Master -- Latest commited changes broken (wont build)
+Alpha -- Latest commited changes from Master fixed all build errors etc (will build but buggy)
 Beta -- Branch not yet available
 Stable -- Branch not yet available
 
-Installation Intrustctions
+Installation Instructions
 --------------------------
 Do the following command in Ubuntu terminal:
 1. git clone (URL HERE)
@@ -18,26 +17,18 @@ Do the following command in Ubuntu terminal:
 3. sudo make install
 You should get "pirum-shell (version here) is now installed"
 
-Uninstall intrusctions
+Uninstall Instructions
 ----------------------
 Do the following commands in Ubuntu terminal:
-1. cd pirum-shell (if deleted follow steps 1-2 from install intrustions)
+1. cd pirum-shell (if deleted follow steps 1-2 from install instructions)
 2. sudo make uninstall
-You should get "pirum-shell (version here) is now installed"
+You should get "pirum-shell (version here) is now uninstalled"
 
 About
 -----
 This is a program that is all about being a lightweight, simple and slick gnome-shell style desktop launcher.
 
 I have tested this with every window manager i can install so far. (openbox, metacity, xfwm, compiz)
-
-Recent Updates
---------------
- * Alpha release containing:
-    - Overlay with hot corner activities rollover
-    - Shortcuts set in the config (Options button)
-      Reload changes to your favourites within the UI.
-    - Show your open windows inside the overlay
 
 Recomendations
 --------------
