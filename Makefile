@@ -1,6 +1,6 @@
 INSTALLPATH="/usr/share/pirum-shell"
-INSTALLTEXT="pirum-shell is now installed"
-UNINSTALLTEXT="pirum-shell has been removed"
+INSTALLTEXT="pirum-shell v0.1A is now installed"
+UNINSTALLTEXT="pirum-shell v0.1A has been removed"
 
 install-req:
 	@mkdir -p $(INSTALLPATH)
@@ -32,7 +32,9 @@ uninstall-req:
 	@rm -rf $(INSTALLPATH)
 	@rm /usr/share/pixmaps/pirum-shell.png
 	@rm /usr/share/applications/pirum-shell.desktop
+	@rm /usr/share/applications/pirum-shell3.desktop
 	@rm /usr/bin/pirum-shell
+	@rm /usr/bin/pirum-shell3
 
 uninstall: uninstall-req
 	@echo $(UNINSTALLTEXT)
